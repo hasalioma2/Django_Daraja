@@ -1,4 +1,5 @@
-business_shortCode = "600637"
+LNM_Short_code = "174379"
+C2BShortcode="600730"
 PhoneNumber ="254726686337"
 LNM_Passkey ="bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919"
 consumer_key ="0oLaXrPM4HAULWOjsAUAQ40RWa2yNkHH"
