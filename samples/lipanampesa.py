@@ -20,7 +20,7 @@ def lipa_na_mpesa():
     "PartyA": keys.PhoneNumber,
     "PartyB": keys.LNM_Short_code,
     "PhoneNumber": keys.PhoneNumber,
-    "CallBackURL": "https://fullstackdjango.com/callback",
+    "CallBackURL": "https://692e842ae4a1.ngrok.io/api/payments/lnm/",
     "AccountReference": "1234567",
     "TransactionDesc": "test Mpesa"
     }
