@@ -13,6 +13,7 @@ class LNMCallbackUrlAPIView(CreateAPIView):
 
     def create(self, request):
         print(request.data, "this is request.data")
+# below shows the formart which safaricom sends the data.
 
         """
         {'Body':
@@ -37,30 +38,29 @@ class LNMCallbackUrlAPIView(CreateAPIView):
         }
 
         """
+
+        # we pull values from safaricom's response.
+
         merchant_request_id = request.data["Body"]["stkCallback"]["MerchantRequestID"]
         print(merchant_request_id, "this should be MerchantRequestID")
         checkout_request_id = request.data["Body"]["stkCallback"]["CheckoutRequestID"]
         result_code = request.data["Body"]["stkCallback"]["ResultCode"]
         result_description = request.data["Body"]["stkCallback"]["ResultDesc"]
-        amount = request.data["Body"]["stkCallback"]["CallbackMetadata"]["Item"][0][
-            "Value"
-        ]
+        # pull amount
+        amount = request.data["Body"]["stkCallback"]["CallbackMetadata"]["Item"][0]["Value"]
         print(amount, "this should be an amount")
-        mpesa_receipt_number = request.data["Body"]["stkCallback"]["CallbackMetadata"][
-            "Item"
-        ][1]["Value"]
+        # pull mpesa code
+        mpesa_receipt_number = request.data["Body"]["stkCallback"]["CallbackMetadata"]["Item"][1]["Value"]
         print(mpesa_receipt_number, "this should be an mpesa_receipt_number")
 
         balance = ""
-        transaction_date = request.data["Body"]["stkCallback"]["CallbackMetadata"][
-            "Item"
-        ][3]["Value"]
+
+        transaction_date = request.data["Body"]["stkCallback"]["CallbackMetadata"]["Item"][3]["Value"]
         print(transaction_date, "this should be an transaction_date")
 
-        phone_number = request.data["Body"]["stkCallback"]["CallbackMetadata"]["Item"][
-            4
-        ]["Value"]
+        phone_number = request.data["Body"]["stkCallback"]["CallbackMetadata"]["Item"][4]["Value"]
         print(phone_number, "this should be an phone_number")
+
 
         from datetime import datetime
 
