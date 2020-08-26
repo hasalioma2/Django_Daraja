@@ -16,8 +16,8 @@ def register_url():
     request = {
         "ShortCode": keys.shortcode,
         "ResponseType": "Completed",
-        "ConfirmationURL": "https://mysterious-oasis-16355.herokuapp.com/api/payments/c2b-confirmation/",
-        "ValidationURL":   "https://mysterious-oasis-16355.herokuapp.com/api/payments/c2b-validation/",
+        "ConfirmationURL": "https://84dd0e23e9bb.ngrok.io/api/payments/c2b-confirmation/",
+        "ValidationURL":   "https://84dd0e23e9bb.ngrok.io/api/payments/c2b-validation/",
     }
 
     try:

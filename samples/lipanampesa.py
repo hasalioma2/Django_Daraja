@@ -21,11 +21,11 @@ def lipa_na_mpesa():
         "Password": decoded_password,
         "Timestamp": formatted_time,
         "TransactionType": "CustomerPayBillOnline",
-        "Amount": "3",
+        "Amount": "1",
         "PartyA": keys.phone_number,
         "PartyB": keys.business_shortCode,
         "PhoneNumber": keys.phone_number,
-        "CallBackURL": "https://mysterious-oasis-16355.herokuapp.com/api/payments/lnm/",
+        "CallBackURL": "https://84dd0e23e9bb.ngrok.io/api/payments/lnm/",
         "AccountReference": "test aware",
         "TransactionDesc": "Pay School Fees",
     }
