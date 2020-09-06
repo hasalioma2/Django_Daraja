@@ -25,7 +25,7 @@ def lipa_na_mpesa():
         "PartyA": keys.phone_number,
         "PartyB": keys.business_shortCode,
         "PhoneNumber": keys.phone_number,
-        "CallBackURL": "https://84dd0e23e9bb.ngrok.io/api/payments/lnm/",
+        "CallBackURL": "https://6d688458b474.ngrok.io/api/payments/lnm/",
         "AccountReference": "test aware",
         "TransactionDesc": "Pay School Fees",
     }

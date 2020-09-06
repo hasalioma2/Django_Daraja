@@ -16,8 +16,8 @@ def register_url():
     request = {
         "ShortCode": keys.shortcode,
         "ResponseType": "Completed",
-        "ConfirmationURL": "https://84dd0e23e9bb.ngrok.io/api/payments/c2b-confirmation/",
-        "ValidationURL":   "https://84dd0e23e9bb.ngrok.io/api/payments/c2b-validation/",
+        "ConfirmationURL": "https://6d688458b474.ngrok.io/api/payments/c2b-confirmation/",
+        "ValidationURL":   "https://6d688458b474.ngrok.io/api/payments/c2b-validation/",
     }
 
     try:
@@ -28,7 +28,7 @@ def register_url():
     print(response.text)
 
 
-# register_url()
+register_url()
 
 
 def simulate_c2b_transaction():
