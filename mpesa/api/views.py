@@ -14,6 +14,7 @@ from mpesa.api.encode import generate_password
 from mpesa.api.utils import get_timestamp
 from mpesa.api import keys
 
+
 class LNMCallbackUrlAPIView(CreateAPIView):
     queryset = LNMOnline.objects.all()
     serializer_class = LNMOnlineSerializer
