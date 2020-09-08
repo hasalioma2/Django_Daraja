@@ -1,10 +1,18 @@
 from rest_framework.generics import CreateAPIView
 
 from rest_framework.permissions import AllowAny
-
+# from django import request
 from mpesa.models import LNMOnline, C2BPayments
 from mpesa.api.serializers import LNMOnlineSerializer,C2BPaymentSerializer
 
+import requests
+from requests.auth import HTTPBasicAuth
+from django.http import HttpResponse
+
+from mpesa.api.access_token import generate_access_token
+from mpesa.api.encode import generate_password
+from mpesa.api.utils import get_timestamp
+from mpesa.api import keys
 
 class LNMCallbackUrlAPIView(CreateAPIView):
     queryset = LNMOnline.objects.all()
@@ -144,3 +152,30 @@ class C2BConfirmationAPIView(CreateAPIView):
 
     #     return Response({"ResultDesc": 0})
 
+def lipa_na_mpesa(request):
+    formatted_time = get_timestamp()
+    decoded_password = generate_password(formatted_time)
+    access_token = generate_access_token()
+
+    api_url = "https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest"
+
+    headers = {"Authorization": "Bearer %s" % access_token}
+
+    request = {
+        "BusinessShortCode": keys.business_shortCode,
+        "Password": decoded_password,
+        "Timestamp": formatted_time,
+        "TransactionType": "CustomerPayBillOnline",
+        "Amount": "1",#pick from form
+        "PartyA": keys.phone_number,#pick from form
+        "PartyB": keys.business_shortCode,
+        "PhoneNumber": keys.phone_number,#pick from form
+        "CallBackURL": "https://2daabc20ac4b.ngrok.io/api/payments/lnm/",
+        "AccountReference": "test aware",#pick from form
+        "TransactionDesc": "Pay School Fees",#pick from form
+    }
+
+    response = requests.post(api_url, json=request, headers=headers)
+
+    # print (response.text)
+    return HttpResponse("Here's the text of the Web page.")

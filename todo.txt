@@ -1,8 +1,9 @@
-1. add lnm online view to views and add url
-2. add generate token to views and add url
-3. add simulate to views and add url
-4. create an app for the customer registration, login and interaction interface
-5. Auto generate Unique customer IDs, display last 10 payments for the specific customer, and curent internet plan.
-6. display connection status and next paymnent date.
-7. intergrate bulk sms system to acknowledge customer payments, remind customers of payments and any other information.
-8. intergrate a chating Bot for customer inquiries.
+>add lnm online view to views and add url(done)
+>add a webform to fill in dynamic values.
+>add generate token to views and add url
+>add simulate to views and add url
+>create an app for the customer registration, login and interaction interface
+>Auto generate Unique customer IDs, display last 10 payments for the specific customer, and curent internet plan.
+>display connection status and next paymnent date.
+>intergrate bulk sms system to acknowledge customer payments, remind customers of payments and any other information.
+>intergrate a chating Bot for customer inquiries.
